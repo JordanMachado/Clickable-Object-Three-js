@@ -48,7 +48,6 @@ function init()
 	// LISTENER
 	document.addEventListener('mousedown',onDocumentMouseDown,false);
 	document.addEventListener('mousemove',onDocumentMouseMove,false);
-	
 }
 
 function onDocumentMouseMove(event)
@@ -68,28 +67,20 @@ function onDocumentMouseMove(event)
 		if(!INTERSECTED)
 		{
 			currentObjectId = intersects[ 0 ].object.id;
-			console.log(currentObjectId);
 			intersects[ 0 ].object.material.color.setHex(0x9900FF );
 			INTERSECTED = !INTERSECTED;
 		}
 	}
 	else
 	{
-			
-		//console.log(currentObject);
 		if (currentObjectId != null)
 		{
-			
 			var objectTouched = scene.getObjectById( currentObjectId, true );
-			console.log(objectTouched);
 			objectTouched.material.color.setHex(0x00ff00 );
 			currentObjectId=null;
-
 			INTERSECTED = !INTERSECTED;
 		}
-	
 	}
-
 }
 
 function onDocumentMouseDown(event)
@@ -123,11 +114,8 @@ function update()
 	stats.update();
 }
 
-
-
 function render ()
 {
-	
 	renderer.render(scene, camera);
 }
 
